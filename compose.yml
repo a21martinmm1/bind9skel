@@ -6,15 +6,27 @@ services:
       rededns:
           ipv4_address: 192.168.20.10
     volumes:
-      - ./dnsserver/conf/named.conf.options:/etc/bind/named.conf.options
-      - ./dnsserver/conf/named.conf.local:/etc/bind/named.conf.local
-      - ./dnsserver/conf/db.starwars.lan:/var/cache/bind/db.starwars.lan
-      - ./dnsserver/conf/db.20.168.192:/var/cache/bind/db.20.168.192
+      - ./dnsserver/conf/primario/named.conf.options:/etc/bind/named.conf.options
+      - ./dnsserver/conf/primario/named.conf.local:/etc/bind/named.conf.local
+      - ./dnsserver/conf/primario/db.starwars.lan:/var/cache/bind/db.starwars.lan
+      - ./dnsserver/conf/primario/db.20.168.192:/var/cache/bind/db.20.168.192
+
+  darthsidious:
+    build: dnsserver
+    hostname: darthsidious
+    networks:
+      rededns:
+          ipv4_address: 192.168.20.11
+    volumes:
+      - ./dnsserver/conf/secundario/named.conf.options:/etc/bind/named.conf.options
+      - ./dnsserver/conf/secundario/named.conf.local:/etc/bind/named.conf.local
+
   eq1:
     build: debian
     hostname: eq1
     dns:
       - 192.168.20.10
+      - 192.168.20.11
     networks:
       rededns:
           ipv4_address: 192.168.20.100

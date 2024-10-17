@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	darthvader.starwars.lan. root.starwars.lan. (
-			      1		; Serial
+			      8		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -19,3 +19,5 @@ $TTL	604800
 24	IN	PTR	yoda.starwars.lan.
 25	IN	PTR	yoda.starwars.lan.
 26	IN	PTR	c3p0.starwars.lan.
+28	IN	PTR	chewbacca.starwars.lan.
+29	IN	PTR	r2d2.starwars.lan.
