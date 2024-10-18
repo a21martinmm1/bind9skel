@@ -43,7 +43,7 @@ Crea un ficheiro Markdown con extension .md coas capturas que fagas para demostr
 - nslookup -q=txt lenda.starwars.lan localhost
 - nslookup 192.168.20.11 localhost
 
-# Servizos de Rede e Internet Práctica 1.2 Instalación de zonas secundarias.
+# Servizos de Rede e Internet Práctica 1.3 Instalación de zonas secundarias.
 Partindo da tarefa 1.1, engadiremos un servidor DNS secundario con BIND9 nunha máquina Debian
 
 1. Tomaremos a máquina darthsidious, e configuraremola para ser servidor secundario, tanto da zona primaria de resolución directa como de resolución inversa. Captura os ficheiros de configuración en ambalas dúas máquinas. Fai unha captura onde se vexa o reinicio da máquina darthsidious, no que se vexa no log dos dous equipos e que se fixo a transferencia de zona.
