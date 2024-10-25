@@ -1,0 +1,21 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "imperio.starwars.lan" {
+    type master;
+    file "db.imperio.starwars.lan";
+};
+zone "20.168.192.in-addr.arpa" {
+    type master;
+    file "db.20.168.192";
+};
+zone "starwars.lan" {
+    type forward;
+    forward only;
+    forwarders { 192.168.20.11; };
+};

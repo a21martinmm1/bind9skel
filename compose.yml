@@ -21,6 +21,18 @@ services:
       - ./dnsserver/conf/secundario/named.conf.options:/etc/bind/named.conf.options
       - ./dnsserver/conf/secundario/named.conf.local:/etc/bind/named.conf.local
 
+  leia:
+    build: dnsserver
+    hostname: leia
+    networks:
+      rededns:
+          ipv4_address: 192.168.20.106
+    volumes:
+      - ./dnsserver/conf/delegado/named.conf.options:/etc/bind/named.conf.options
+      - ./dnsserver/conf/delegado/named.conf.local:/etc/bind/named.conf.local
+      - ./dnsserver/conf/delegado/db.imperio.starwars.lan:/var/cache/bind/db.imperio.starwars.lan
+      - ./dnsserver/conf/delegado/db.20.168.192:/var/cache/bind/db.20.168.192
+
   eq1:
     build: debian
     hostname: eq1

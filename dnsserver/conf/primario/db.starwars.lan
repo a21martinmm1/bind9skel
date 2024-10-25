@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	darthvader.starwars.lan. root.starwars.lan. (
-				 11		; Serial
+				 12		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -29,3 +29,12 @@ lenda	IN	TXT	"Que a forza te acompanhe"
 
 chewbacca IN	A	192.168.20.28
 r2d2	IN	A 	192.168.20.29
+
+
+$ORIGIN antigarepublica.starwars.lan.
+xendor	IN	A	192.168.20.222
+ardenlyn	IN	A 	192.168.20.223
+
+$ORIGIN imperio.starwars.lan.
+@	IN	NS	leia
+leia	IN	A 	192.168.20.106

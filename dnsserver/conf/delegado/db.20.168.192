@@ -1,0 +1,15 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	leia.imperio.starwars.lan. root.imperio.starwars.lan. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	leia.imperio.starwars.lan.
+106	IN	PTR	leia.imperio.starwars.lan.
+225	IN	PTR	tsuichoi.imperio.starwars.lan.
+226	IN	PTR	bultarswan.imperio.starwars.lan.

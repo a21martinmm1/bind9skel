@@ -11,4 +11,4 @@ COPY entrypoint.sh /entrypoint.sh
 RUN sed 's/OPTIONS=.*/OPTIONS="-u bind -4"/' /etc/default/named
 
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
