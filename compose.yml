@@ -42,6 +42,10 @@ services:
     networks:
       rededns:
           ipv4_address: 192.168.20.100
+    volumes:
+      - ./dnsclient/nsupdate/actualiza.txt:/actualiza.txt
+      - ./dnsclient/bind/rndc.conf:/etc/bind/rndc.conf
+    
 networks:
   rededns:
     ipam:

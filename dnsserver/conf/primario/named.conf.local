@@ -11,13 +11,25 @@ key "transfer" {
 	secret "dGpAFDYSa6RkeXuZSaN+cVzcUDxhTDsDIeJ0Saxa9Cw=";
 };
 
+key "rndc-remote" {
+	algorithm hmac-sha256;
+	secret "+DjglCIvGK0Bl3liptecHun6oqbIL1oYGOqDeXCFEZs=";
+};
+
+controls {
+    inet 127.0.0.1 allow { localhost; };
+    inet * port 7766 allow { 192.168.20.100; } keys { "rndc-remote"; };
+};
+
 zone "starwars.lan" {
     type master;
     file "db.starwars.lan";
-    allow-transfer { key "transfer"; 192.168.20.11; 192.168.20.102; };
+    allow-transfer { key "transfer"; 192.168.20.11; 192.168.20.102; 192.168.20.100; };
+    allow-update { any; };
 };
 zone "20.168.192.in-addr.arpa" {
     type master;
     file "db.20.168.192";
     allow-transfer { key "transfer"; 192.168.20.11; 192.168.20.102; };
+    allow-update { any; };
 };

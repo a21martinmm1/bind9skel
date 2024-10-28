@@ -22,3 +22,18 @@ options {
 
 	listen-on-v6 { none; };
 };
+logging {
+	channel query.log {
+		file "/var/log/bind/queries.log";
+		severity dynamic;
+	};
+
+	category queries { query.log; };
+	
+	channel update.log {
+		file "/var/log/bind/update.log";
+		severity dynamic;
+	};
+
+	category update { update.log; };
+};
