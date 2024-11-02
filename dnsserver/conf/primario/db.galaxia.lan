@@ -1,0 +1,16 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	darthvader.galaxia.lan. root.galaxia.lan. (
+				 13		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	darthvader.galaxia.lan.
+
+darthvader	IN	A	192.168.20.10
+aaylasecura	IN	A	192.168.20.239
+yarua	IN	A 	192.168.20.238

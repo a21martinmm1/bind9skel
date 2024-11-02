@@ -10,6 +10,7 @@ services:
       - ./dnsserver/conf/primario/named.conf.local:/etc/bind/named.conf.local
       - ./dnsserver/conf/primario/db.starwars.lan:/var/cache/bind/db.starwars.lan
       - ./dnsserver/conf/primario/db.20.168.192:/var/cache/bind/db.20.168.192
+      - ./dnsserver/conf/primario/db.galaxia.lan:/var/cache/bind/db.galaxia.lan
 
   darthsidious:
     build: dnsserver
@@ -34,7 +35,7 @@ services:
       - ./dnsserver/conf/delegado/db.20.168.192:/var/cache/bind/db.20.168.192
 
   eq1:
-    build: debian
+    build: dnsserver
     hostname: eq1
     dns:
       - 192.168.20.10
@@ -44,6 +45,7 @@ services:
           ipv4_address: 192.168.20.100
     volumes:
       - ./dnsclient/nsupdate/actualiza.txt:/actualiza.txt
+      - ./dnsclient/nsupdate/update.key:/update.key
       - ./dnsclient/bind/rndc.conf:/etc/bind/rndc.conf
     
 networks:

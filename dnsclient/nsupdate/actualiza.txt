@@ -1,5 +1,5 @@
 server darthvader.starwars.lan
 zone starwars.lan
-update add babyyoda.starwars.lan 86400 A 192.168.20.124
+update add darthmaul.starwars.lan 86400 A 192.168.20.144
 show
 send
