@@ -11,19 +11,9 @@ key "transfer" {
 	secret "dGpAFDYSa6RkeXuZSaN+cVzcUDxhTDsDIeJ0Saxa9Cw=";
 };
 
-key "rndc-remote" {
-	algorithm hmac-sha256;
-	secret "+DjglCIvGK0Bl3liptecHun6oqbIL1oYGOqDeXCFEZs=";
-};
-
 key "update-key" {
     algorithm hmac-sha256;
 	secret "uRpHuti3+cDEvOHq5BVJFhiJruJR4ZFFXWIIC9Vht/c=";
-};
-
-controls {
-    inet 127.0.0.1 allow { localhost; };
-    inet * port 7766 allow { 192.168.20.100; } keys { "rndc-remote"; };
 };
 
 zone "starwars.lan" {
